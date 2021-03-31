@@ -18,7 +18,9 @@ export function TodoProvider({ children }) {
       description: description
     });
   }
-
+ function removeTodo(id){
+    TodosRef.child(id).remove();
+ }
   useEffect(() => {
     const unsubscribe = TodosRef.on('value', (snapshot) => {
       const todos = snapshot.val();
@@ -34,7 +36,8 @@ export function TodoProvider({ children }) {
 
   const value = {
     todoList,
-    addTodo
+    addTodo,
+    removeTodo
   }
 
   return (

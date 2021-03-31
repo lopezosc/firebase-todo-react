@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Container,Form, Button, Card, Alert } from "react-bootstrap"
 import { Link, useHistory } from "react-router-dom";
 import TodoList from "./TodoList";
 //import  app   from "../firebase"
@@ -25,7 +25,8 @@ export default function TodoForm() {
 
   return (
     <>
-      <Card>
+      <Container   className="d-flex align-items-left justify-content-left">
+      <Card className="w-100" style={{ maxWidth:'80%' }}>
         <Card.Body>
           <h2 className=" mb-1">Title</h2>
           {error && <Alert variant="danger">{error}</Alert>}
@@ -42,12 +43,13 @@ export default function TodoForm() {
               Submit Todo
             </Button>
           </Form>
-           
+              <TodoList></TodoList>
         </Card.Body>
       </Card>
       <Card>
-        <TodoList></TodoList>
+     
       </Card>
+      </Container>
     </>
   )
 }

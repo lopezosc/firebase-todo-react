@@ -12,6 +12,7 @@ import PrivateRoute from "./PrivateRoute"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import TodoForm from "./TodoForm"
+import ResetPassword from "./ResetPassword"
 import Home from "./Home"
 import { useAuth } from "../contexts/AuthContext"
  
@@ -58,6 +59,7 @@ export default function App() {
           <Nav.Link as={Link}  to='/signup'>Signup</Nav.Link>
           <Nav.Link as={Link} to='/login'>Login</Nav.Link>
           <Nav.Link as={Link} to='/login'>Logout</Nav.Link>
+          <Nav.Link as={Link}  to='/reset'>Password Reset</Nav.Link>
           <Nav.Link as={Link}  to='/update-profile'>profile</Nav.Link>
           </Nav>
         </Navbar>
@@ -66,6 +68,7 @@ export default function App() {
               <PrivateRoute exact path="/" component={Home} />
               <PrivateRoute  path="/home" component={Home} />
               <PrivateRoute path="/newtodo" component={TodoForm}/>
+              <PrivateRoute path="/reset" component={ResetPassword}/>
               <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
